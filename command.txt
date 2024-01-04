@@ -98,5 +98,8 @@ https://docs.djangoproject.com/en/5.0/ref/templates/builtins/#date
 cd backend
 python manage.py startapp users
 
+pip install django-crispy-forms
+pip install crispy-bootstrap4
+
 
 
