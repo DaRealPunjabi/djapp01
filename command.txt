@@ -49,3 +49,51 @@ python manage.py migrate
 python manage.py createsuperuser
 
 https://getbootstrap.com/docs/4.0/getting-started/introduction/#starter-template
+
+
+python manage.py makemigrations
+python manage.py sqlmigrate blog 0001
+
+python manage.py migrate
+
+python manage.py shell
+
+from blog.models import Post
+
+from blog.models import Post
+from django.contrib.auth.models import User
+
+User.objects.all()
+
+User.objects.first()
+User.objects.last()
+User.objects.filter(username='admin')
+User.objects.filter(username='admin').first()
+
+user = User.objects.filter(username='admin').first()
+user.id
+user.pk
+
+user = User.objects.get(id=1)
+
+Post.objects.all()
+post_1 = Post(title='Blog 1', content='First Post Content!', author=user)
+post_1.save()
+
+post_2 = Post(title='Blog 2', content='Second Post Content!', author_id=user.id)
+post_2.save()
+
+post = Post.objects.first()
+post.content
+post.date_posted
+post.author
+post.author.email
+
+user.post_set.all()
+
+user.post_set.create(title='Blog 3', content='Third Post Content!)
+
+https://docs.djangoproject.com/en/5.0/ref/templates/builtins/#date
+
+
+
