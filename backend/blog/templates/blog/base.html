@@ -35,8 +35,19 @@
               </div>
               <!-- Navbar Right Side -->
               <div class="navbar-nav">
-                <a class="nav-item nav-link" href="#">Login</a>
-                <a class="nav-item nav-link" href="#">Register</a>
+                {% if user.is_authenticated %}
+                <form method="get" action="{% url 'user-profile' %}">
+                  {% csrf_token %}
+                  <button type="submit">Profile</button>
+                </form>
+                <form style="margin-left: 1em;" method="post" action="{% url 'user-logout' %}">
+                  {% csrf_token %}
+                  <button type="submit">Logout</button>
+                </form>
+                {% else %}
+                <a class="nav-item nav-link" href="{% url 'user-login' %}">Login</a>
+                <a style="margin-left: 1em;" class="nav-item nav-link" href="{% url 'user-registration' %}">Register</a>
+                {% endif %}
               </div>
             </div>
           </div>
@@ -70,6 +81,8 @@
           </div>
         </div>
     </main>
+
+    <br>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

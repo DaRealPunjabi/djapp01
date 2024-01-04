@@ -83,3 +83,23 @@ body {
     font-size: 2.5rem;
   }
   
+  .btn-link {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    color: #cbd5db;
+    padding: 0;
+    text-decoration: underline;
+    font-family: inherit;
+    font-size: inherit;
+    
+    font-weight: 500;
+
+    box-shadow: none;
+    background-color: #5f788a;
+    padding: 6px 12px;
+    display: block;
+}
+
+.btn-link:hover {color: #ffffff;}
