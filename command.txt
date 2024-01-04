@@ -101,5 +101,16 @@ python manage.py startapp users
 pip install django-crispy-forms
 pip install crispy-bootstrap4
 
+pip install pillow
+python manage.py makemigrations
+python manage.py migrate
 
+python manage.py shell
+from django.contrib.auth.models import User
 
+user = User.objects.filter(username='admin').first()
+user = User.objects.filter(username='test').first()
+
+user.profile
+user.profile.image
+user.profile.image.width.url
