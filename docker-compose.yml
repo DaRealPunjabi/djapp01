@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  myapp:
+    build: .
+
+    # Changes to the container folder /djamgo are saved to djapp01 dir
+    volumes:
+      - ./backend:/django
+
+    # Changes to the container folder /djamgo are saved to djapp01 dir
+
+    ports:
+      - 8000:8000
+
+    image: myapp01:django
+    container_name: django_container
+    command: python manage.py runserver 0.0.0.0:8000
+

@@ -1,0 +1,49 @@
+
+mkdir djapp01
+cd djapp01
+
+code .
+
+python3 -m venv venv
+
+. venv/bin/activate
+
+pip install --upgrade pip
+pip3 install --upgrade pip
+
+pip install django
+
+django-admin startproject core .
+
+python manage.py runserver 8000
+
+http://127.0.0.1:8000/
+
+python manage.py startapp blog
+
+http://127.0.0.1:8000/blog/
+http://127.0.0.1:8000/blog/about/
+
+https://hub.docker.com/
+
+chmod +x ./Dockerfile
+
+#Build the image
+cd ~/projects/djapp01 
+docker-compose build
+
+docker-compose run --rm myapp django-admin startproject core .
+
+docker-compose up
+
+pip install psycopg2-binary
+
+docker-compose -f pg-compose.yml up
+
+http://127.0.0.1:5050
+root@root.com
+root
+
+cd backend
+python manage.py migrate
+python manage.py createsuperuser
