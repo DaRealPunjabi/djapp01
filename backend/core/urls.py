@@ -18,11 +18,17 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views import debug
 
+from users import views as user_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
 #    path('', debug.default_urlconf),
+
     path('', include('blog.urls')),
     path('blog/', include('blog.urls')),
+
+    path('register/', user_views.register, name='user-registration'),
+
 
 ]
