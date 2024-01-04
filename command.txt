@@ -47,3 +47,5 @@ root
 cd backend
 python manage.py migrate
 python manage.py createsuperuser
+
+https://getbootstrap.com/docs/4.0/getting-started/introduction/#starter-template
