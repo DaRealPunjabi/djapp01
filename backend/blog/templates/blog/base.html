@@ -36,7 +36,11 @@
               <!-- Navbar Right Side -->
               <div class="navbar-nav">
                 {% if user.is_authenticated %}
-                <form method="get" action="{% url 'user-profile' %}">
+                <form method="get" action="{% url 'post-create' %}">
+                  {% csrf_token %}
+                  <button type="submit">New Post</button>
+                </form>
+                <form style="margin-left: 1em;" method="get" action="{% url 'user-profile' %}">
                   {% csrf_token %}
                   <button type="submit">Profile</button>
                 </form>
